@@ -7,5 +7,5 @@ const rs = fs.createReadStream('./1_streams.md', {
 
 //the data event
 rs.on('data', data => {
-  console.log('chunk', data);
+  console.log('data', data);
 });
