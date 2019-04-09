@@ -8,9 +8,9 @@ const server = net.createServer(connectedClient => {
   
   //client.pipe(client);
   connectedClient.on('data', data => {
-    console.log(data);
-    client.write(`ECHO FROM SERVER: ${data}`);
+
+    allClients.forEach(client => {
+      client.write(`ECHO FROM SERVER: ${data}`);
+    });
   });
 });
-
-server.listen(6248);
